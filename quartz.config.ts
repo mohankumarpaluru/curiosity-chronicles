@@ -35,7 +35,7 @@ const config: QuartzConfig = {
           dark: "#565c71",           // Near-black for highlights and important elements
           secondary:"#5d6cd0",      // Slightly darker lavender for links and secondary actions
           tertiary: "#61bf93",       // Muted teal for tertiary elements
-          highlight: "#eff2f9"// Lighter shade of secondary with transparency
+          highlight: "#eff2f9",// Lighter shade of secondary with transparency
           textHighlight: "#fff23688",
         },
         darkMode: {
@@ -46,7 +46,7 @@ const config: QuartzConfig = {
           dark: "#e8eaf4",           // Near-white for highlights and important elements
           secondary: "#4db8b6",      // Teal for links and secondary actions
           tertiary: "#f3d250",       // Muted yellow for tertiary elements
-          highlight: "rgba(77, 184, 182, 0.15)" // Teal highlight with opacity
+          highlight: "rgba(77, 184, 182, 0.15)", // Teal highlight with opacity
           textHighlight: "#b3aa0288",
         },
       },
