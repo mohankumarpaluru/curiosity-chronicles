@@ -36,7 +36,7 @@ const config: QuartzConfig = {
           secondary:"#5d6cd0",      // Slightly darker lavender for links and secondary actions
           tertiary: "#61bf93",       // Muted teal for tertiary elements
           highlight: "#eff2f9",// Lighter shade of secondary with transparency
-          textHighlight: "#fff23688",
+          textHighlight: "#FFD70088",
         },
         darkMode: {
           light: "#1d1f30",          // Background color
@@ -47,7 +47,7 @@ const config: QuartzConfig = {
           secondary: "#4db8b6",      // Teal for links and secondary actions
           tertiary: "#f3d250",       // Muted yellow for tertiary elements
           highlight: "rgba(77, 184, 182, 0.15)", // Teal highlight with opacity
-          textHighlight: "#b3aa0288",
+          textHighlight: "#FF66CC88",
         },
       },
     },
