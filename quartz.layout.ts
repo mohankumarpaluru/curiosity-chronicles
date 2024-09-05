@@ -5,7 +5,21 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        // from data-repo
+        repo: 'mohankumarpaluru/curiosity-chronicles',
+        // from data-repo-id
+        repoId: 'R_kgDOL9hH7A',
+        // from data-category
+        category: 'Announcements',
+        // from data-category-id
+        categoryId: 'DIC_kwDOL9hH7M4CiOPg',
+      }
+    }),
+  ],
   footer: Component.Footer({
     links: {
       "RSS": "https://notes.trixtertempdrive.eu.org/index.xml", 
