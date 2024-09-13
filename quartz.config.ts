@@ -12,7 +12,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "google",
+      tagId: "G-ZXNWEHFMD2"
     },
     locale: "en-US",
     baseUrl: "notes.trixtertempdrive.eu.org",
@@ -23,8 +24,8 @@ const config: QuartzConfig = {
       cdnCaching: true,
       typography: {
         header: "Montserrat",  // Orbitron
-        body: "Karla",
-        code: "Fira Code",
+        body: "Inter",
+        code: "JetBrains Mono",
       },
       colors: {
         lightMode: {
