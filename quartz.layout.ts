@@ -22,7 +22,7 @@ export const sharedPageComponents: SharedLayout = {
   ],
   footer: Component.Footer({
     links: {
-      "RSS": "https://notes.trixtertempdrive.eu.org/index.xml", 
+      "RSS": "https://curiosity.trixtertempdrive.eu.org/index.xml",
       "Email": "mailto:mohankumarpaluru@gmail.com",
       "LinkedIn": "https://www.linkedin.com/in/mohankumarpaluru",
       GitHub: "https://github.com/mohankumarpaluru"
