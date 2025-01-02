@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "📚 Curiosity Chronicles",
-    pageTitleSuffix: " | Curiosity Chronicles",
+    pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -17,10 +17,10 @@ const config: QuartzConfig = {
       tagId: "G-ZXNWEHFMD2"
     },
     locale: "en-US",
-    baseUrl: "curiosity.trixtertempdrive.eu.org",
+    baseUrl: "notes.trixtertempdrive.eu.org",
     ignorePatterns: ["private", "templates", ".obsidian", "**/private", "Private", "**/Private"],
     defaultDateType: "created",
-    generateSocialImages: true,
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -71,7 +71,8 @@ const config: QuartzConfig = {
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
-      Plugin.CrawlLinks({ markdownLinkResolution: "absolute", lazyLoad: true }),
+      Plugin.CrawlLinks({ markdownLinkResolution: "shortest", externalLinkIcon: true,
+        openLinksInNewTab: true , prettyLinks: true , lazyLoad: true }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
     ],
