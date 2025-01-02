@@ -9,6 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "📚 Curiosity Chronicles",
+    pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -19,6 +20,7 @@ const config: QuartzConfig = {
     baseUrl: "notes.trixtertempdrive.eu.org",
     ignorePatterns: ["private", "templates", ".obsidian", "**/private", "Private", "**/Private"],
     defaultDateType: "created",
+    generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
