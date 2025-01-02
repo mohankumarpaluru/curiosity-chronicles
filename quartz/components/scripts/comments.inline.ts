@@ -16,7 +16,7 @@ const changeTheme = (e: CustomEventMap["themechange"]) => {
     {
       giscus: {
         setConfig: {
-          theme: getThemeUrl(getThemeName(newTheme)),
+          theme: newTheme,
         },
       },
     },
