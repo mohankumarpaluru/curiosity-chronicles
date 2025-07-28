@@ -17,7 +17,7 @@ const config: QuartzConfig = {
       tagId: "G-ZXNWEHFMD2"
     },
     locale: "en-US",
-    baseUrl: "curiosity.trixtertempdrive.eu.org",
+    baseUrl: "mohan.is-a.dev/curiosity",
     ignorePatterns: ["private", "templates", ".obsidian", "**/private", "Private", "**/Private"],
     defaultDateType: "created",
     generateSocialImages: true,
