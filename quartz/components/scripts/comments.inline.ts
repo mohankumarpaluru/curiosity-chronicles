@@ -5,6 +5,9 @@ const changeTheme = (e: CustomEventMap["themechange"]) => {
     return
   }
 
+  const newTheme = (theme === "dark") ? "transparent_dark" : "light";
+
+
   if (!iframe.contentWindow) {
     return
   }
@@ -13,7 +16,7 @@ const changeTheme = (e: CustomEventMap["themechange"]) => {
     {
       giscus: {
         setConfig: {
-          theme: getThemeUrl(getThemeName(theme)),
+          theme: newTheme,
         },
       },
     },
@@ -80,7 +83,7 @@ document.addEventListener("nav", () => {
   giscusScript.setAttribute("data-reactions-enabled", giscusContainer.dataset.reactionsEnabled)
   giscusScript.setAttribute("data-input-position", giscusContainer.dataset.inputPosition)
   giscusScript.setAttribute("data-lang", giscusContainer.dataset.lang)
-  const theme = document.documentElement.getAttribute("saved-theme")
+  const theme = document.documentElement.getAttribute("saved-theme") === "dark" ? "transparent_dark" : "light";
   if (theme) {
     giscusScript.setAttribute("data-theme", getThemeUrl(getThemeName(theme)))
   }
