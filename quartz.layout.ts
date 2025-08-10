@@ -5,11 +5,27 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        // from data-repo
+        repo: 'mohankumarpaluru/curiosity-chronicles',
+        // from data-repo-id
+        repoId: 'R_kgDOL9hH7A',
+        // from data-category
+        category: 'Announcements',
+        // from data-category-id
+        categoryId: 'DIC_kwDOL9hH7M4CiOPg',
+      }
+    }),
+  ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "RSS": "https://curiosity.trixtertempdrive.eu.org/index.xml",
+      "Email": "mailto:mohankumarpaluru@gmail.com",
+      "LinkedIn": "https://www.linkedin.com/in/mohankumarpaluru",
+      GitHub: "https://github.com/mohankumarpaluru"
     },
   }),
 }

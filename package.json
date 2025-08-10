@@ -1,15 +1,15 @@
 {
-  "name": "@jackyzha0/quartz",
+  "name": "@mohankumarpaluru/curiosity-chronicles",
   "description": "🌱 publish your digital garden and notes as a website",
   "private": true,
   "version": "4.5.1",
   "type": "module",
-  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
+  "author": "mohankumarpaluru <mohankumarpaluru@gmail.com>",
   "license": "MIT",
-  "homepage": "https://quartz.jzhao.xyz",
+  "homepage": "https://mohan.is-a.dev/curiosity",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackyzha0/quartz.git"
+    "url": "https://github.com/mohankumarpaluru/curiosity-chronicles.git"
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
@@ -38,8 +38,8 @@
     "@clack/prompts": "^0.11.0",
     "@floating-ui/dom": "^1.7.2",
     "@myriaddreamin/rehype-typst": "^0.6.0",
-    "@napi-rs/simple-git": "0.1.21",
     "@tweenjs/tween.js": "^25.0.0",
+    "@vercel/speed-insights": "^1.0.12",
     "ansi-truncate": "^1.2.0",
     "async-mutex": "^0.5.0",
     "chokidar": "^4.0.3",
@@ -61,6 +61,7 @@
     "mdast-util-to-string": "^4.0.0",
     "micromorph": "^0.4.5",
     "minimatch": "^10.0.3",
+    "next": "^14.2.7",
     "pixi.js": "^8.11.0",
     "preact": "^10.27.0",
     "preact-render-to-string": "^6.5.13",
@@ -98,6 +99,7 @@
     "yargs": "^18.0.0"
   },
   "devDependencies": {
+    "@napi-rs/simple-git": "^0.1.21",
     "@types/d3": "^7.4.3",
     "@types/hast": "^3.0.4",
     "@types/js-yaml": "^4.0.9",
