@@ -1,0 +1,348 @@
+# yaml-language-server: $schema=./quartz/plugins/quartz-plugins.schema.json
+configuration:
+  pageTitle: "📚 Curiosity Chronicles"
+  pageTitleSuffix: " | Curiosity Chronicles"
+  enableSPA: true
+  enablePopovers: true
+  analytics:
+    provider: google
+    tagId: G-ZXNWEHFMD2
+  locale: en-US
+  baseUrl: curiosity.trixter.eu.org
+  ignorePatterns:
+    - private
+    - templates
+    - .obsidian
+    - "**/private"
+    - Private
+    - "**/Private"
+  generateSocialImages: true
+  theme:
+    fontOrigin: googleFonts
+    cdnCaching: true
+    typography:
+      header: Montserrat
+      body: Inter
+      code: JetBrains Mono
+    colors:
+      lightMode:
+        light: "#fcfcfd"
+        lightgray: "#eff2f9"
+        gray: "#a6adc1"
+        darkgray: "#6e738a"
+        dark: "#565c71"
+        secondary: "#5d6cd0"
+        tertiary: "#61bf93"
+        highlight: "#eff2f9"
+        textHighlight: "#FFD70088"
+      darkMode:
+        light: "#1d1f30"
+        lightgray: "#333546"
+        gray: "#3f4254"
+        darkgray: "#b0b2c3"
+        dark: "#e8eaf4"
+        secondary: "#4db8b6"
+        tertiary: "#f3d250"
+        highlight: rgba(77, 184, 182, 0.15)
+        textHighlight: "#FF66CC88"
+plugins:
+  # ── Transformers (order matters) ─────────────────────────────────────────────
+  - source: github:quartz-community/created-modified-date
+    enabled: true
+    options:
+      defaultDateType: created
+      priority:
+        - frontmatter
+        - git
+        - filesystem
+    order: 10
+
+  - source: github:quartz-community/syntax-highlighting
+    enabled: true
+    options:
+      theme:
+        light: github-light
+        dark: github-dark
+      keepBackground: false
+    order: 20
+
+  - source: github:quartz-community/obsidian-flavored-markdown
+    enabled: true
+    options:
+      enableInHtmlEmbed: false
+      # enableCheckbox was false in v4 (not set); set true to enable task checkbox rendering
+      enableCheckbox: false
+    order: 30
+
+  - source: github:quartz-community/github-flavored-markdown
+    enabled: true
+    order: 40
+
+  - source: github:quartz-community/table-of-contents
+    enabled: true
+    order: 50
+    layout:
+      position: right
+      priority: 30
+
+  - source: github:quartz-community/crawl-links
+    enabled: true
+    options:
+      markdownLinkResolution: shortest
+      externalLinkIcon: true
+      openLinksInNewTab: true
+      prettyLinks: true
+      lazyLoad: true
+    order: 60
+
+  - source: github:quartz-community/description
+    enabled: true
+    order: 70
+
+  - source: github:quartz-community/latex
+    enabled: true
+    options:
+      renderEngine: katex
+    order: 80
+
+  - source: github:quartz-community/citations
+    enabled: false
+    order: 85
+
+  - source: github:quartz-community/hard-line-breaks
+    enabled: false
+    order: 90
+
+  - source: github:quartz-community/ox-hugo
+    enabled: false
+    order: 91
+
+  - source: github:quartz-community/roam
+    enabled: false
+    order: 92
+
+  - source: github:quartz-community/fonts
+    enabled: true
+
+  # ── Filters ──────────────────────────────────────────────────────────────────
+  - source: github:quartz-community/remove-draft
+    enabled: true
+
+  - source: github:quartz-community/explicit-publish
+    enabled: false
+
+  # ── Emitters ─────────────────────────────────────────────────────────────────
+  - source: github:quartz-community/alias-redirects
+    enabled: true
+
+  - source: github:quartz-community/content-index
+    enabled: true
+    options:
+      enableSiteMap: true
+      enableRSS: true
+
+  - source: github:quartz-community/favicon
+    enabled: true
+
+  - source: github:quartz-community/og-image
+    enabled: true
+
+  - source: github:quartz-community/cname
+    enabled: true
+
+  - source: github:quartz-community/canvas-page
+    enabled: true
+
+  - source: github:quartz-community/content-page
+    enabled: true
+
+  - source: github:quartz-community/folder-page
+    enabled: true
+
+  - source: github:quartz-community/tag-page
+    enabled: true
+
+  # ── Layout Components ─────────────────────────────────────────────────────────
+  - source: github:quartz-community/explorer
+    enabled: true
+    layout:
+      position: left
+      priority: 50
+
+  - source: github:quartz-community/graph
+    enabled: true
+    layout:
+      position: right
+      priority: 10
+
+  - source: github:quartz-community/search
+    enabled: true
+    layout:
+      position: left
+      priority: 20
+      group: toolbar
+      groupOptions:
+        grow: true
+
+  - source: github:quartz-community/backlinks
+    enabled: true
+    layout:
+      position: right
+      priority: 50
+
+  - source: github:quartz-community/article-title
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 10
+
+  - source: github:quartz-community/content-meta
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 20
+
+  - source: github:quartz-community/tag-list
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 30
+
+  - source: github:quartz-community/page-title
+    enabled: true
+    layout:
+      position: left
+      priority: 10
+
+  - source: github:quartz-community/darkmode
+    enabled: true
+    layout:
+      position: left
+      priority: 30
+      group: toolbar
+
+  - source: github:quartz-community/reader-mode
+    enabled: true
+    layout:
+      position: left
+      priority: 35
+      group: toolbar
+
+  - source: github:quartz-community/breadcrumbs
+    enabled: true
+    layout:
+      position: beforeBody
+      priority: 5
+      condition: not-index
+
+  # Giscus comments – transparent_dark for dark mode, light for light mode
+  # Schema: { lightTheme?: string, darkTheme?: string } — see .quartz/plugins/comments/dist/index.d.ts
+  - source: github:quartz-community/comments
+    enabled: true
+    options:
+      provider: giscus
+      options:
+        repo: mohankumarpaluru/curiosity-chronicles
+        repoId: R_kgDOL9hH7A
+        category: Announcements
+        categoryId: DIC_kwDOL9hH7M4CiOPg
+        darkTheme: transparent_dark
+        lightTheme: light
+    layout:
+      position: afterBody
+      priority: 10
+
+  - source: github:quartz-community/footer
+    enabled: true
+    options:
+      links:
+        RSS: "https://curiosity.trixter.eu.org/index.xml"
+        Email: "mailto:mohankumarpaluru@gmail.com"
+        LinkedIn: "https://www.linkedin.com/in/mohankumarpaluru"
+        GitHub: "https://github.com/mohankumarpaluru"
+
+  - source: github:quartz-community/recent-notes
+    enabled: false
+
+  - source: github:quartz-community/spacer
+    enabled: true
+    options: {}
+    order: 25
+    layout:
+      position: left
+      priority: 25
+      display: mobile-only
+
+  - source: github:quartz-community/bases-page
+    enabled: true
+    options: {}
+    order: 50
+
+  - source: github:quartz-community/note-properties
+    enabled: true
+    options:
+      includeAll: false
+      includedProperties:
+        - description
+        - tags
+        - aliases
+      excludedProperties: []
+      hidePropertiesView: false
+      delimiters: ---
+      language: yaml
+    order: 5
+    layout:
+      position: beforeBody
+      priority: 15
+      display: all
+
+  - source: github:quartz-community/unlisted-pages
+    enabled: true
+    options: {}
+    order: 45
+
+  - source: github:quartz-community/encrypted-pages
+    enabled: true
+    options:
+      iterations: 600000
+      passwordField: password
+      unlistWhenEncrypted: false
+      outputPath: static/encryptedContentIndex.json
+    order: 900
+    layout:
+      position: body
+      priority: 100
+      display: all
+
+  - source: github:quartz-community/stacked-pages
+    enabled: false
+    layout:
+      position: afterBody
+      priority: 50
+      display: all
+
+layout:
+  groups:
+    toolbar:
+      priority: 35
+      direction: row
+      gap: 0.5rem
+  byPageType:
+    "404":
+      positions:
+        beforeBody: []
+        left: []
+        right: []
+    content: {}
+    folder:
+      exclude:
+        - reader-mode
+      positions:
+        right: []
+    tag:
+      exclude:
+        - reader-mode
+      positions:
+        right: []
+    canvas: {}
+    bases: {}
