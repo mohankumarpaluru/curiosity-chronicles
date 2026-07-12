@@ -27,9 +27,9 @@ export default (() => {
     const baseDir = fileData.slug === "404" ? path : pathToRoot(fileData.slug!)
     const iconPath = joinSegments(baseDir, "static/icon.png")
 
-    // Url of current page
-    const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+    // Url of current page for social sharing metadata (overrides base URL to canonical hosted domain)
+    const generatedUrl = fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
+    const socialUrl = generatedUrl.replace("curiosity.trixter.eu.org", "mohan.is-a.dev/curiosity")
 
     const usesCustomOgImage = ctx.cfg.plugins.emitters.some(
       (e) => e.name === CustomOgImagesEmitterName,

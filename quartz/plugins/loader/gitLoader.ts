@@ -459,7 +459,7 @@ export async function installPlugin(
       console.log(styleText("cyan", `→`), `Linking ${spec.name} from ${spec.repo}...`)
     }
 
-    fs.symlinkSync(spec.repo, pluginDir, "dir")
+    fs.symlinkSync(spec.repo, pluginDir, "junction")
 
     if (options.verbose) {
       console.log(styleText("green", `✓`), `Linked ${spec.name}`)

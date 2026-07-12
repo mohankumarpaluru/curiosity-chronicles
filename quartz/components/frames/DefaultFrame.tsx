@@ -2,6 +2,8 @@ import { PageFrame, PageFrameProps } from "./types"
 import HeaderConstructor from "../Header"
 
 const Header = HeaderConstructor()
+import ShareLinkConstructor from "../ShareLink"
+const ShareLink = ShareLinkConstructor()
 
 /**
  * The default page frame — three-column layout with left sidebar, center
@@ -36,9 +38,17 @@ export const DefaultFrame: PageFrame = {
               ))}
             </Header>
             <div class="popover-hint">
-              {beforeBody.map((BodyComponent) => (
-                <BodyComponent {...componentData} />
-              ))}
+              {beforeBody.map((BodyComponent) => {
+                if (BodyComponent.name === "ArticleTitle" || BodyComponent.displayName === "ArticleTitle") {
+                  return (
+                    <div class="article-title-row" style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
+                      <BodyComponent {...componentData} />
+                      <ShareLink {...componentData} />
+                    </div>
+                  )
+                }
+                return <BodyComponent {...componentData} />
+              })}
             </div>
           </div>
           <Content {...componentData} />
@@ -58,4 +68,15 @@ export const DefaultFrame: PageFrame = {
       </>
     )
   },
+  css: `
+.article-title-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.article-title-row .article-title {
+  margin-top: 0;
+}
+` + (ShareLink.css ?? ""),
 }

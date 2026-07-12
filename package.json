@@ -1,25 +1,25 @@
 {
-  "name": "@jackyzha0/quartz",
+  "name": "@mohankumarpaluru/curiosity-chronicles",
   "description": "🌱 publish your digital garden and notes as a website",
   "private": true,
   "version": "5.0.0",
   "type": "module",
-  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
+  "author": "mohankumarpaluru <mohankumarpaluru@gmail.com>",
   "license": "MIT",
-  "homepage": "https://quartz.jzhao.xyz",
+  "homepage": "https://mohan.is-a.dev/curiosity",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackyzha0/quartz.git"
+    "url": "https://github.com/mohankumarpaluru/curiosity-chronicles.git"
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
     "docs": "npx quartz build --serve -d docs",
+    "build": "npx quartz build",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx --test",
     "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
-    "install-plugins": "npx tsx ./quartz/plugins/loader/install-plugins.ts",
-    "prebuild": "npm run install-plugins"
+    "prebuild": "npx quartz plugin install"
   },
   "engines": {
     "npm": ">=10.9.2",
@@ -40,6 +40,7 @@
     "@clack/prompts": "^0.11.0",
     "@floating-ui/dom": "^1.7.4",
     "@myriaddreamin/rehype-typst": "^0.6.0",
+    "@vercel/speed-insights": "^1.0.12",
     "@napi-rs/simple-git": "0.1.22",
     "ansi-truncate": "^1.4.0",
     "async-mutex": "^0.5.0",
